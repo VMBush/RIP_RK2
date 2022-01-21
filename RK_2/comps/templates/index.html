@@ -1,0 +1,54 @@
+{% load static %}
+
+<html style="font-size: 16px;" class="u-responsive-xs"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="We help and solve your business problem.">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Page 6</title>
+    <link rel="stylesheet" href="https://website964051.nicepage.io/nicepage.css?version=ffec8da5-70de-41a6-a4ab-9cab1e183540" media="screen">
+    <meta name="generator" content="Nicepage 3.30.0, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href={% static "index.css" %}>
+    <style class="u-style"></style>
+    
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Page 6">
+    <meta property="og:type" content="website">
+  
+</head>
+<body class="u-body">
+    
+    <section class="u-align-left u-clearfix u-grey-5 u-section-2" id="carousel_a8a6">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-custom-font u-font-montserrat u-text u-text-1">Компьютерные классы и их компьютерята)</h2>
+        <div class="u-border-16 u-border-palette-3-base u-line u-line-horizontal u-line-1"></div>
+        <div class="u-expanded-width-xs u-list u-list-1">
+          <div class="u-repeater u-repeater-1">
+            {% for class in data.classes %}
+            
+            <div class="u-align-left u-container-style u-custom-item u-list-item u-repeater-item u-white u-list-item-1">
+              <div class="u-container-layout u-similar-container u-container-layout-1">
+                <h5 class="u-text u-text-default u-text-2">{{class.name}}</h5>
+                <div class="u-expanded-height-lg u-expanded-height-xl u-expanded-height-xs u-palette-3-base u-shape u-shape-rectangle u-shape-1"></div>
+                <p class="u-text u-text-3"> 
+                    <ul>
+                    {%for comp in data.comps%}
+                        {%if comp.classroom.id == class.id%}
+                            <li>{{comp.model}} в количестве: {{comp.count}}</li>
+                        {%endif%}
+                    {% endfor %}
+                    </ul>
+                </p>
+              </div>
+            </div>
+            
+            {% endfor%}
+          </div>
+        </div>
+      </div>
+    </section>
+    
+</body></html>
